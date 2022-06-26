@@ -10,18 +10,45 @@ public class ItemGenerator : MonoBehaviour
 
     public GameObject conePrefab;
 
-    private int startPos = 80;
+    private float startPos = 80;
 
-    private int goalPos = 360;
+    private float goalPos = 360;
 
     private float posRange = 3.4f;
+
+    private GameObject unitychan;
+
+    private int distance = 100;
+
+    private float timeout = 1.0f;
+
+    private float timeElapsed = 0.0f;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = startPos; i < goalPos; i+= 15)
+        ItemGenerate();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+        
+
+    }
+
+    void ItemGenerate()
+    {
+        this.unitychan = GameObject.Find("unitychan");
+
+        
+
+        
+
+        for (float i = startPos; i < goalPos; i += 15)
         {
             int num = Random.Range(1, 11);
             if (num <= 2)
@@ -56,11 +83,5 @@ public class ItemGenerator : MonoBehaviour
             }
 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
